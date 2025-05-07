@@ -1,0 +1,556 @@
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1a2a3a;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.user-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#btn-login {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#btn-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#btn-register {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#btn-register:hover {
+    background-color: #c0392b;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a2a3a;
+}
+
+.section-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.section-controls button, .section-controls select, .section-controls input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.section-controls button {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.section-controls button:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden-section {
+    display: none;
+}
+
+/* Jogo em Destaque */
+.jogo-destaque {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.jogo-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.competicao {
+    font-weight: 500;
+}
+
+.estado-jogo {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.ao-vivo {
+    background-color: #e74c3c;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.jogo-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+
+.time img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.nome-time {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.placar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.gols-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.gols {
+    font-size: 2.5rem;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+.separador {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.info-jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.jogo-acoes {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    gap: 1rem;
+}
+
+.btn-acao {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.btn-acao:hover {
+    background-color: #2980b9;
+}
+
+/* Eventos em Tempo Real */
+.eventos-tempo-real {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.eventos-tempo-real h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.eventos-lista {
+    list-style: none;
+}
+
+.evento {
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+}
+
+.evento:last-child {
+    border-bottom: none;
+}
+
+.minuto {
+    font-weight: bold;
+    color: #e74c3c;
+    min-width: 30px;
+}
+
+/* Calendário de Jogos */
+.jogos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.jogo-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.jogo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jogo-card .jogo-header {
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.jogo-card .jogo-content {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.jogo-card .time {
+    flex: 2;
+}
+
+.jogo-card .time img {
+    width: 40px;
+    height: 40px;
+}
+
+.jogo-card .placar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.jogo-card .placar span {
+    font-size: 1.2rem;
+}
+
+.jogo-card .jogo-footer {
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.btn-detalhes {
+    padding: 0.3rem 0.8rem;
+    background-color: transparent;
+    border: 1px solid #3498db;
+    color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-detalhes:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Detalhes do Jogo */
+.detalhes-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.info-jogo-completa {
+    margin-bottom: 2rem;
+}
+
+.times-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.times-info .time {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.times-info .time img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.times-info .time span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.times-info .placar {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.times-info .placar span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.info-adicional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #555;
+}
+
+.info-item i {
+    color: #3498db;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    position: relative;
+}
+
+.tab-btn.active {
+    color: #3498db;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Formação Tática */
+.formacao-container {
+    margin-bottom: 2rem;
+}
+
+.campo-futebol {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #2ecc71;
+    background-image: 
+        linear-gradient(white 1px, transparent 1px),
+        linear-gradient(90deg, white 1px, transparent 1px);
+    background-size: 10% 10%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.jogador {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.time-casa .jogador {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.time-visitante .jogador {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Estatísticas */
+.estatisticas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.estatistica {
+    margin-bottom: 1rem;
+}
+
+.label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.barra-container {
+    display: flex;
+    height: 30px;
