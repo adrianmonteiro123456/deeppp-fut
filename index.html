@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutTrack Pro - Acompanhamento Completo de Futebol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><i class="fas fa-futbol"></i> FutTrack Pro</h1>
+                <p>Acompanhamento completo de futebol</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" id="nav-home"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#" id="nav-calendario"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                    <li><a href="#" id="nav-livescores"><i class="fas fa-bolt"></i> Ao Vivo</a></li>
+                    <li><a href="#" id="nav-estatisticas"><i class="fas fa-chart-bar"></i> Estatísticas</a></li>
+                    <li><a href="#" id="nav-noticias"><i class="fas fa-newspaper"></i> Notícias</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button id="btn-login"><i class="fas fa-user"></i> Login</button>
+                <button id="btn-register"><i class="fas fa-user-plus"></i> Registrar</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="destaque-section" class="active-section">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i> Jogo em Destaque</h2>
+                <div class="section-controls">
+                    <button id="btn-refresh"><i class="fas fa-sync-alt"></i> Atualizar</button>
+                </div>
+            </div>
+            
+            <div class="jogo-destaque">
+                <div class="jogo-header">
+                    <span class="competicao">Campeonato Brasileiro Série A</span>
+                    <span class="estado-jogo ao-vivo">AO VIVO 35'</span>
+                </div>
+                
+                <div class="jogo-content">
+                    <div class="time time-casa">
+                        <img src="https://api.sofascore.app/api/v1/team/1966/image" alt="Flamengo">
+                        <span class="nome-time">Flamengo</span>
+                    </div>
+                    
+                    <div class="placar">
+                        <div class="gols-container">
+                            <span class="gols">2</span>
+                            <span class="separador">-</span>
+                            <span class="gols">1</span>
+                        </div>
+                        <div class="info-jogo">
+                            <span class="estadio"><i class="fas fa-map-marker-alt"></i> Maracanã</span>
+                            <span class="data-hora"><i class="far fa-clock"></i> 15/05/2023 - 16:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="time time-visitante">
+                        <img src="https://api.sofascore.app/api/v1/team/1980/image" alt="Palmeiras">
+                        <span class="nome-time">Palmeiras</span>
+                    </div>
+                </div>
+                
+                <div class="jogo-acoes">
+                    <button class="btn-acao"><i class="fas fa-info-circle"></i> Detalhes</button>
+                    <button class="btn-acao"><i class="fas fa-tv"></i> Assistir</button>
+                    <button class="btn-acao"><i class="fas fa-chart-line"></i> Estatísticas</button>
+                </div>
+            </div>
+            
+            <div class="eventos-tempo-real">
+                <h3><i class="fas fa-list"></i> Eventos do Jogo</h3>
+                <ul class="eventos-lista">
+                    <li class="evento gol">
+                        <span class="minuto">23'</span>
+                        <span class="descricao">⚽ Gol do Flamengo - Gabigol</span>
+                    </li>
+                    <li class="evento cartao-amarelo">
+                        <span class="minuto">28'</span>
+                        <span class="descricao">🟨 Cartão amarelo para Gustavo Scarpa (Palmeiras)</span>
+                    </li>
+                    <li class="evento gol">
+                        <span class="minuto">32'</span>
+                        <span class="descricao">⚽ Gol do Palmeiras - Rony</span>
+                    </li>
+                    <li class="evento gol">
+                        <span class="minuto">35'</span>
+                        <span class="descricao">⚽ Gol do Flamengo - Pedro</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="calendario-section" class="hidden-section">
+            <div class="section-header">
+                <h2><i class="fas fa-calendar-alt"></i> Calendário de Jogos</h2>
+                <div class="section-controls">
+                    <select id="select-competicao">
+                        <option value="todas">Todas Competições</option>
+                        <option value="brasileirao">Brasileirão Série A</option>
+                        <option value="libertadores">Copa Libertadores</option>
+                        <option value="copa-do-brasil">Copa do Brasil</option>
+                    </select>
+                    <input type="date" id="data-calendario">
+                    <button id="btn-hoje">Hoje</button>
+                </div>
+            </div>
+            
+            <div class="jogos-container">
+                <div class="jogo-card">
+                    <div class="jogo-header">
+                        <span class="competicao">Brasileirão Série A</span>
+                        <span class="data-hora">15/05 - 16:00</span>
+                    </div>
+                    <div class="jogo-content">
+                        <div class="time">
+                            <img src="https://api.sofascore.app/api/v1/team/1966/image" alt="Flamengo">
+                            <span>Flamengo</span>
+                        </div>
+                        <div class="placar">
+                            <span>2</span>
+                            <span>-</span>
+                            <span>1</span>
+                        </div>
+                        <div class="time">
+                            <img src="https://api.sofascore.app/api/v1/team/1980/image" alt="Palmeiras">
+                            <span>Palmeiras</span>
+                        </div>
+                    </div>
+                    <div class="jogo-footer">
+                        <span class="estadio">Maracanã</span>
+                        <button class="btn-detalhes">Detalhes</button>
+                    </div>
+                </div>
+                
+                <!-- Mais jogos serão adicionados via JavaScript -->
+            </div>
+        </section>
+
+        <section id="detalhes-jogo-section" class="hidden-section">
+            <div class="section-header">
+                <h2><i class="fas fa-info-circle"></i> Detalhes do Jogo</h2>
+                <button id="btn-voltar-detalhes"><i class="fas fa-arrow-left"></i> Voltar</button>
+            </div>
+            
+            <div class="detalhes-container">
+                <div class="info-jogo-completa">
+                    <div class="times-info">
+                        <div class="time">
+                            <img src="https://api.sofascore.app/api/v1/team/1966/image" alt="Flamengo">
+                            <span>Flamengo</span>
+                        </div>
+                        <div class="placar">
+                            <span>2</span>
+                            <span>-</span>
+                            <span>1</span>
+                        </div>
+                        <div class="time">
+                            <img src="https://api.sofascore.app/api/v1/team/1980/image" alt="Palmeiras">
+                            <span>Palmeiras</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-adicional">
+                        <div class="info-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>Campeonato Brasileiro Série A</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Maracanã, Rio de Janeiro</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="far fa-clock"></i>
+                            <span>15/05/2023 - 16:00</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <span>Árbitro: Wilton Sampaio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="escalacao">Escalações</button>
+                        <button class="tab-btn" data-tab="estatisticas">Estatísticas</button>
+                        <button class="tab-btn" data-tab="eventos">Eventos</button>
+                        <button class="tab-btn" data-tab="h2h">Confrontos</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="escalacao">
+                        <div class="formacao-container">
+                            <h3>Formação Tática</h3>
+                            <div class="campo-futebol">
+                                <div class="time-casa">
+                                    <div class="jogador" style="top: 5%; left: 50%;">1</div>
+                                    <div class="jogador" style="top: 20%; left: 30%;">2</div>
+                                    <div class="jogador" style="top: 20%; left: 50%;">3</div>
+                                    <div class="jogador" style="top: 20%; left: 70%;">4</div>
+                                    <div class="jogador" style="top: 35%; left: 20%;">5</div>
+                                    <div class="jogador" style="top: 35%; left: 50%;">6</div>
+                                    <div class="jogador" style="top: 35%; left: 80%;">7</div>
+                                    <div class="jogador" style="top: 50%; left: 30%;">8</div>
+                                    <div class="jogador" style="top: 50%; left: 70%;">9</div>
+                                    <div class="jogador" style="top: 65%; left: 40%;">10</div>
+                                    <div class="jogador" style="top: 65%; left: 60%;">11</div>
+                                </div>
+                                <div class="time-visitante">
+                                    <div class="jogador" style="top: 95%; left: 50%;">1</div>
+                                    <div class="jogador" style="top: 80%; left: 30%;">2</div>
+                                    <div class="jogador" style="top: 80%; left: 50%;">3</div>
+                                    <div class="jogador" style="top: 80%; left: 70%;">4</div>
+                                    <div class="jogador" style="top: 65%; left: 20%;">5</div>
+                                    <div class="jogador" style="top: 65%; left: 50%;">6</div>
+                                    <div class="jogador" style="top: 65%; left: 80%;">7</div>
+                                    <div class="jogador" style="top: 50%; left: 30%;">8</div>
+                                    <div class="jogador" style="top: 50%; left: 70%;">9</div>
+                                    <div class="jogador" style="top: 35%; left: 40%;">10</div>
+                                    <div class="jogador" style="top: 35%; left: 60%;">11</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="escalacao-detalhada">
+                            <div class="escalacao-time">
+                                <h4>Flamengo (4-3-3)</h4>
+                                <ul class="jogadores">
+                                    <li><span class="numero">1</span> Santos - Goleiro</li>
+                                    <li><span class="numero">2</span> Matheuzinho - Lateral Direito</li>
+                                    <li><span class="numero">3</span> David Luiz - Zagueiro</li>
+                                    <li><span class="numero">4</span> Léo Pereira - Zagueiro</li>
+                                    <li><span class="numero">5</span> Ayrton Lucas - Lateral Esquerdo</li>
+                                    <li><span class="numero">6</span> Thiago Maia - Volante</li>
+                                    <li><span class="numero">7</span> Gerson - Meia</li>
+                                    <li><span class="numero">8</span> Everton Ribeiro - Meia</li>
+                                    <li><span class="numero">9</span> Bruno Henrique - Ponta</li>
+                                    <li><span class="numero">10</span> Arrascaeta - Meia</li>
+                                    <li><span class="numero">11</span> Gabigol - Atacante</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="escalacao-time">
+                                <h4>Palmeiras (4-2-3-1)</h4>
+                                <ul class="jogadores">
+                                    <li><span class="numero">1</span> Weverton - Goleiro</li>
+                                    <li><span class="numero">2</span> Marcos Rocha - Lateral Direito</li>
+                                    <li><span class="numero">3</span> Gustavo Gómez - Zagueiro</li>
+                                    <li><span class="numero">4</span> Murilo - Zagueiro</li>
+                                    <li><span class="numero">5</span> Piquerez - Lateral Esquerdo</li>
+                                    <li><span class="numero">6</span> Zé Rafael - Volante</li>
+                                    <li><span class="numero">7</span> Danilo - Volante</li>
+                                    <li><span class="numero">8</span> Raphael Veiga - Meia</li>
+                                    <li><span class="numero">9</span> Dudu - Ponta</li>
+                                    <li><span class="numero">10</span> Scarpa - Meia</li>
+                                    <li><span class="numero">11</span> Rony - Atacante</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="estatisticas">
+                        <div class="estatisticas-container">
+                            <div class="estatistica">
+                                <div class="label">Posse de Bola</div>
+                                <div class="barra-container">
+                                    <div class="barra time-casa" style="width: 58%;">58%</div>
+                                    <div class="barra time-visitante" style="width: 42%;">42%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="estatistica">
+                                <div class="label">Finalizações</div>
+                                <div class="barra-container">
+                                    <div class="barra time-casa" style="width: 65%;">13</div>
+                                    <div class="barra time-visitante" style="width: 35%;">7</div>
+                                </div>
+                            </div>
+                            
+                            <div class="estatistica">
+                                <div class="label">Finalizações no Gol</div>
+                                <div class="barra-container">
+                                    <div class="barra time-casa" style="width: 75%;">6</div>
+                                    <div class="barra time-visitante" style="width: 25%;">2</div>
+                                </div>
+                            </div>
+                            
+                            <div class="estatistica">
+                                <div class="label">Escanteios</div>
+                                <div class="barra-container">
+                                    <div class="barra time-casa" style="width: 60%;">6</div>
+                                    <div class="barra time-visitante" style="width: 40%;">4</div>
+                                </div>
+                            </div>
+                            
+                            <div class="estatistica">
+                                <div class="label">Faltas</div>
+                                <div class="barra-container">
+                                    <div class="barra time-casa" style="width: 45%;">9</div>
+                                    <div class="barra time-visitante" style="width: 55%;">11</div>
+                                </div>
+                            </div>
+                            
+                            <div class="estatistica">
+                                <div class="label">Cartões Amarelos</div>
+                                <div class="barra-container">
+                                    <div class="barra time-casa" style="width: 33%;">1</div>
+                                    <div class="barra time-visitante" style="width: 67%;">2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="eventos">
+                        <h3>Cronologia do Jogo</h3>
+                        <ul class="eventos-lista">
+                            <li class="evento gol">
+                                <span class="minuto">23'</span>
+                                <span class="descricao">⚽ Gol do Flamengo - Gabigol</span>
+                            </li>
+                            <li class="evento cartao-amarelo">
+                                <span class="minuto">28'</span>
+                                <span class="descricao">🟨 Cartão amarelo para Gustavo Scarpa (Palmeiras)</span>
+                            </li>
+                            <li class="evento gol">
+                                <span class="minuto">32'</span>
+                                <span class="descricao">⚽ Gol do Palmeiras - Rony</span>
+                            </li>
+                            <li class="evento gol">
+                                <span class="minuto">35'</span>
+                                <span class="descricao">⚽ Gol do Flamengo - Pedro</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-content" id="h2h">
+                        <h3>Histórico de Confrontos</h3>
+                        <div class="h2h-container">
+                            <div class="h2h-jogo">
+                                <div class="times">
+                                    <span>Flamengo</span>
+                                    <span>2 - 1</span>
+                                    <span>Palmeiras</span>
+                                </div>
+                                <div class="info">
+                                    <span>Brasileirão 2023</span>
+                                    <span>15/05/2023</span>
+                                </div>
+                            </div>
+                            
+                            <div class="h2h-jogo">
+                                <div class="times">
+                                    <span>Palmeiras</span>
+                                    <span>0 - 0</span>
+                                    <span>Flamengo</span>
+                                </div>
+                                <div class="info">
+                                    <span>Brasileirão 2022</span>
+                                    <span>10/09/2022</span>
+                                </div>
+                            </div>
+                            
+                            <div class="h2h-jogo">
+                                <div class="times">
+                                    <span>Flamengo</span>
+                                    <span>3 - 0</span>
+                                    <span>Palmeiras</span>
+                                </div>
+                                <div class="info">
+                                    <span>Supercopa 2021</span>
+                                    <span>11/04/2021</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="h2h-resumo">
+                            <div class="resumo-item">
+                                <span>Últimos 5 jogos</span>
+                                <span>Flamengo: 3V | Palmeiras: 1V | Empates: 1</span>
+                            </div>
+                            <div class="resumo-item">
+                                <span>Média de gols</span>
+                                <span>Flamengo: 1.8 | Palmeiras: 1.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre o FutTrack Pro</h3>
+                <p>A plataforma definitiva para acompanhamento de futebol, com estatísticas detalhadas, escalações e resultados em tempo real.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">API para Desenvolvedores</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 FutTrack Pro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
